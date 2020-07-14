@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body{
+    background-color: #fff;
+}
+.header{
+    font-size: 20px;
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+.content{
+    margin-top: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+.content h2{
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+
+}
+.visitProfileButton{
+    border:none;
+    background-color: #009578;
+    height: 40px;
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+.footer{
+    background-color: #131a22;
+    margin-top: 30px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 10px;
+    text-align:center;
+}
+.footer .socialLogo{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.footer a{
+    margin-right: 10px;
+    font-size: 30px;
+    color: #fff;
+}
+.copyRightText {
+    margin-top: 20px;
+    width: 100%;
+}
