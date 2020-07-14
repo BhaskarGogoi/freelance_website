@@ -58,15 +58,15 @@ Route::group(['middleware' => ['auth']], function() {
     //Routs for User
 
     Route::middleware(['user.checker'])->group(function () {
-        //Middleware to chekc if user's phone number is verified or not;
+        //Middleware to check if user's phone number is verified or not;
         Route::middleware(['phone.verified.checker'])->group(function () {
            
-            Route::get('/free-hair-cut', 'User\FreeHairCut@index');             
-            Route::post('/book-free-hair-cut', 'User\FreeHairCut@book'); 
+            //no routs are added currently 
             
         });
         Route::get('/become-a-partner', 'User\JobProfileController@is_created');             
         Route::post('/create_job_profile', 'User\JobProfileController@create_job_profile');
+
         //Middleware for check if user is a service partner
         Route::middleware(['partner.checker'])->group(function () {
             Route::get('/upload-work-sample', 'User\JobProfileController@upload_work_sample');
@@ -80,6 +80,7 @@ Route::group(['middleware' => ['auth']], function() {
             Route::post('/create_freelance_profile', 'User\JobProfileController@create_freelance_profile');
 
         });
+
         Route::get('/dashboard', 'User\DashboardController@checkProfileCreated', function() {
             return view('userDashboard.dashboard');
         });
@@ -109,11 +110,12 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/submit-feedback', 'User\FeedbackController@submit_feedback');
         Route::get('/refer-and-earn', 'User\ReferAndEarnController@index');
         Route::get('/generate-referal-code', 'User\ReferAndEarnController@generateRefCode');
-
     });
 
 
 });
+
+//Routs that can be access by anyone
 Route::get('/select-packages/{category}', 'User\BookingController@selectpackages');
 Route::get('/select-package-items/{package_name}/{package_item_id}', 'User\BookingController@selectpackagesitems');
 Route::get('/book-service/{category}', 'User\BookingController@select_service');            //book services where prices are not pre determined
